@@ -11,6 +11,7 @@ The homepage includes:
 - **What I’m learning now:** CS, Advanced Mathematics, Linear Algebra, Vibe Coding, Physics Principles, Music.
 - **Skills and tools:** Agent and Vibe Coding.
 - **Beyond the screen:** Travel, Reading, Jog, and Table Tennis.
+- **Travel atlas:** Interactive cream-colored World and China map views where visited countries and China provinces are loaded from [visited-places.txt](visited-places.txt) and shown in blue. The boundaries are rendered from public GeoJSON sources: [world.geojson](https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/DATA/world.geojson) and [china.json](https://cdn.jsdelivr.net/gh/longwosion/geojson-map-china@master/china.json).
 - **Favorite Saying:**
 
   > That fresh flowers will grow, and many glories of immortal stamp

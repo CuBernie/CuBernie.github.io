@@ -1,0 +1,22 @@
+# One visited region per line: map|GeoJSON region name
+# Edit this file to change the blue areas on the maps.
+world|Madagascar
+china|北京市
+china|上海市
+china|浙江省
+china|江苏省
+china|吉林省
+china|黑龙江省
+china|内蒙古自治区
+china|新疆维吾尔自治区
+china|西藏自治区
+china|青海省
+china|甘肃省
+china|陕西省
+china|广西壮族自治区
+china|湖南省
+china|广东省
+china|香港特别行政区
+china|江西省
+china|安徽省
+china|海南省

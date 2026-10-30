@@ -173,6 +173,210 @@
       margin: 0;
     }
 
+    .travel-map {
+      margin-top: 1.25rem;
+      padding: clamp(0.8rem, 2vw, 1.25rem);
+      background: #f8efdc;
+      border: 1px solid #eadbbd;
+      border-radius: 0.85rem;
+    }
+
+    .travel-map__intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .travel-map__intro p {
+      margin: 0;
+      color: #6d604d;
+      font-size: 0.9rem;
+    }
+
+    .map-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0 0 0.85rem;
+    }
+
+    .map-tab {
+      padding: 0.45rem 0.8rem;
+      border: 1px solid #d4c095;
+      border-radius: 999px;
+      background: #fbf5e8;
+      color: #6d604d;
+      font: inherit;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+
+    .map-tab:hover,
+    .map-tab:focus-visible,
+    .map-tab[aria-selected="true"] {
+      border-color: #2878d0;
+      background: #e2effc;
+      color: #14599f;
+    }
+
+    .map-tab:focus-visible {
+      outline: 3px solid rgba(40, 120, 208, 0.35);
+      outline-offset: 2px;
+    }
+
+    .map-view[hidden] {
+      display: none;
+    }
+
+    .map-frame {
+      overflow: hidden;
+      border: 1px solid #e2d1ad;
+      border-radius: 0.65rem;
+      background: #fbf5e8;
+    }
+
+    .map-frame svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .map-land {
+      fill: #e8d9b8;
+      stroke: #d4c095;
+      stroke-width: 0.45;
+      stroke-linejoin: round;
+    }
+
+    .map-shape:hover,
+    .map-region:focus-visible {
+      fill: #ead3a5;
+    }
+
+    .map-region {
+      transition: fill 160ms ease, stroke 160ms ease;
+    }
+
+    .map-region.is-visited {
+      fill: #2878d0;
+      stroke: #14599f;
+      stroke-width: 0.7;
+      filter: drop-shadow(0 0 1.5px rgba(40, 120, 208, 0.45));
+    }
+
+    .map-grid {
+      fill: none;
+      stroke: #eadfc8;
+      stroke-width: 0.25;
+      stroke-dasharray: 1.2 1.8;
+    }
+
+    .map-load-error {
+      margin: 0;
+      padding: 0.75rem 1rem;
+      color: #8a4b38;
+      font-size: 0.85rem;
+    }
+
+    .map-grid--legacy {
+      fill: none;
+      stroke: #eadfc8;
+      stroke-width: 0.7;
+      stroke-dasharray: 2 3;
+    }
+
+    .map-pin {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .map-pin circle {
+      fill: #b6a680;
+      stroke: #fbf5e8;
+      stroke-width: 1.5;
+      transition: fill 160ms ease, transform 160ms ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .map-pin:hover circle,
+    .map-pin:focus-visible circle,
+    .map-pin.is-visited circle {
+      fill: #2878d0;
+      transform: scale(1.35);
+    }
+
+    .map-pin.is-visited circle {
+      filter: drop-shadow(0 0 3px rgba(40, 120, 208, 0.55));
+    }
+
+    .map-pin text {
+      fill: #405143;
+      font-size: 3px;
+      font-weight: 650;
+      pointer-events: none;
+    }
+
+    .travel-map__legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+      margin: 0.8rem 0 0;
+      color: #6d604d;
+      font-size: 0.85rem;
+    }
+
+    .legend-dot {
+      display: inline-block;
+      width: 0.7rem;
+      height: 0.7rem;
+      margin-right: 0.3rem;
+      vertical-align: -0.08em;
+      border-radius: 50%;
+      background: #b6a680;
+    }
+
+    .legend-dot--visited {
+      background: #2878d0;
+      box-shadow: 0 0 0 2px rgba(40, 120, 208, 0.14);
+    }
+
+    .place-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .place-button {
+      padding: 0.4rem 0.7rem;
+      border: 1px solid #d4c095;
+      border-radius: 999px;
+      background: transparent;
+      color: #405143;
+      font: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .place-button:hover,
+    .place-button:focus-visible,
+    .place-button[aria-pressed="true"] {
+      border-color: #2878d0;
+      background: #e2effc;
+      color: #14599f;
+    }
+
+    .place-button:focus-visible {
+      outline: 3px solid rgba(40, 120, 208, 0.35);
+      outline-offset: 2px;
+    }
+
     @media (max-width: 30rem) {
       header {
         padding-top: 3rem;
@@ -201,6 +405,7 @@
       <li><a href="#learning">Learning</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#interests">Interests</a></li>
+      <li><a href="#travel">Travel</a></li>
       <li><a href="#quote">Quote</a></li>
     </ul>
   </nav>
@@ -244,6 +449,47 @@
       </ul>
     </section>
 
+    <section id="travel" aria-labelledby="travel-title">
+      <h2 id="travel-title">Travel</h2>
+      <p>Places I have been, and places I hope to discover next. Click Travel above to jump here.</p>
+      <div class="travel-map" aria-label="Interactive travel maps">
+        <div class="travel-map__intro">
+          <strong>My travel atlas</strong>
+          <p id="travel-map-status">Loading blue regions from <code>visited-places.txt</code>…</p>
+        </div>
+        <div class="map-tabs" role="tablist" aria-label="Choose a travel map">
+          <button class="map-tab" type="button" role="tab" id="world-tab" aria-controls="world-map" aria-selected="true">World map</button>
+          <button class="map-tab" type="button" role="tab" id="china-tab" aria-controls="china-map" aria-selected="false">China map</button>
+        </div>
+        <div class="map-view" id="world-map" role="tabpanel" aria-labelledby="world-tab">
+        <div class="map-frame">
+          <svg class="geo-map" data-geo-map="world" viewBox="0 0 100 54" role="img" aria-labelledby="map-title map-description">
+            <title id="map-title">Accurate world travel map</title>
+            <desc id="map-description">World country boundaries loaded from public GeoJSON map data. Blue countries show visited nations or regions.</desc>
+            <g class="map-grid" data-grid="world"></g>
+            <g class="map-shapes" data-shapes="world"></g>
+            <g class="map-pins" data-pins="world"></g>
+          </svg>
+        </div>
+        <p class="place-file-note">World regions are read from <code>visited-places.txt</code>.</p>
+        </div>
+
+        <div class="map-view" id="china-map" role="tabpanel" aria-labelledby="china-tab" hidden>
+          <div class="map-frame">
+            <svg class="geo-map" data-geo-map="china" viewBox="0 0 100 64" role="img" aria-labelledby="china-title china-description">
+              <title id="china-title">Accurate China travel map</title>
+              <desc id="china-description">China province boundaries loaded from public GeoJSON map data. Blue provinces show visited regions.</desc>
+              <g class="map-grid" data-grid="china"></g>
+              <g class="map-shapes" data-shapes="china"></g>
+              <g class="map-pins" data-pins="china"></g>
+            </svg>
+          </div>
+          <p class="place-file-note">China provinces are read from <code>visited-places.txt</code>.</p>
+        </div>
+        <p class="travel-map__legend"><span><span class="legend-dot legend-dot--visited"></span>visited</span><span><span class="legend-dot"></span>not yet marked</span></p>
+      </div>
+    </section>
+
     <section id="quote" aria-labelledby="quote-title">
       <h2 id="quote-title">Favorite Saying</h2>
       <blockquote>
@@ -255,5 +501,135 @@
   <footer class="container">
     <p>This is my GitHub Pages personal homepage.</p>
   </footer>
+
+  <script>
+    (() => {
+      const SVG_NS = 'http://www.w3.org/2000/svg';
+      const tabs = [...document.querySelectorAll('.map-tab')];
+      const views = [...document.querySelectorAll('.map-view')];
+      const visited = new Set();
+      const visitedNames = new Set();
+      const visitedFile = 'visited-places.txt';
+      const sources = {
+        world: [
+          'https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/DATA/world.geojson',
+          'https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson'
+        ],
+        china: [
+          'https://cdn.jsdelivr.net/gh/longwosion/geojson-map-china@master/china.json',
+          'https://raw.githubusercontent.com/longwosion/geojson-map-china/master/china.json'
+        ]
+      };
+      const bounds = {
+        world: { left: -180, right: 180, top: 84, bottom: -58, width: 100, height: 54 },
+        china: { left: 73, right: 135, top: 54, bottom: 18, width: 100, height: 64 }
+      };
+
+      const project = (map, [lon, lat]) => {
+        const b = bounds[map];
+        return [(lon - b.left) / (b.right - b.left) * b.width, (b.top - lat) / (b.top - b.bottom) * b.height];
+      };
+
+      function pathFromGeometry(map, geometry) {
+        const rings = geometry.type === 'Polygon' ? geometry.coordinates : geometry.coordinates.flat();
+        return rings.map((ring) => ring.map((point, index) => {
+          const [x, y] = project(map, point);
+          return `${index ? 'L' : 'M'}${x.toFixed(3)} ${y.toFixed(3)}`;
+        }).join(' ') + ' Z').join(' ');
+      }
+
+      function drawGrid(map, svg) {
+        const group = svg.querySelector(`[data-grid="${map}"]`);
+        const b = bounds[map];
+        const lines = [];
+        for (let lon = Math.ceil(b.left / 30) * 30; lon <= b.right; lon += 30) {
+          const [x] = project(map, [lon, b.bottom]);
+          lines.push(`<path d="M${x} 0V${b.height}" />`);
+        }
+        for (let lat = Math.ceil(b.bottom / 15) * 15; lat <= b.top; lat += 15) {
+          const [, y] = project(map, [b.left, lat]);
+          lines.push(`<path d="M0 ${y}H${b.width}" />`);
+        }
+        group.innerHTML = lines.join('');
+      }
+
+      function drawFeatures(map, svg, data) {
+        const group = svg.querySelector(`[data-shapes="${map}"]`);
+        group.innerHTML = data.features.map((feature) => {
+          const region = feature.properties?.name || feature.properties?.NAME || 'Unknown region';
+          const d = pathFromGeometry(map, feature.geometry);
+          return `<path class="map-land map-shape map-region" data-map="${map}" data-region="${region}" aria-label="${region}, not marked as visited" d="${d}" />`;
+        }).join('');
+        applyVisitedRegions(map);
+      }
+
+      function applyVisitedRegions(map) {
+        document.querySelectorAll(`.map-region[data-map="${map}"]`).forEach((shape) => {
+          const isVisited = visited.has(`${map}:${shape.dataset.region}`) || visitedNames.has(shape.dataset.region);
+          shape.classList.toggle('is-visited', isVisited);
+          shape.setAttribute('aria-label', `${shape.dataset.region}, ${isVisited ? 'visited' : 'not marked as visited'}`);
+        });
+      }
+
+      function parseVisitedPlaces(text) {
+        return text.split(/\r?\n/).map((line) => line.trim())
+          .filter((line) => line && !line.startsWith('#'))
+          .map((line) => {
+            const separator = line.indexOf('|');
+            if (separator > 0) return { map: line.slice(0, separator).trim().toLowerCase(), region: line.slice(separator + 1).trim() };
+            return { map: '', region: line.replace(/^[-*]\s*/, '').trim() };
+          })
+          .filter((entry) => entry.region);
+      }
+
+      async function loadVisitedPlaces() {
+        const response = await fetch(`${visitedFile}?v=${Date.now()}`, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`Visited places returned ${response.status}`);
+        visited.clear();
+        visitedNames.clear();
+        parseVisitedPlaces(await response.text()).forEach(({ map, region }) => {
+          if (map) visited.add(`${map}:${region}`);
+          visitedNames.add(region);
+        });
+        ['world', 'china'].forEach(applyVisitedRegions);
+        const status = document.querySelector('#travel-map-status');
+        if (status) status.textContent = `Loaded ${visitedNames.size} visited region${visitedNames.size === 1 ? '' : 's'} from visited-places.txt.`;
+      }
+
+      function showMap(map) {
+        tabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.id === `${map}-tab`)));
+        views.forEach((view) => { view.hidden = view.id !== `${map}-map`; });
+      }
+
+      async function loadMap(map) {
+        const svg = document.querySelector(`[data-geo-map="${map}"]`);
+        let lastError;
+        for (const source of sources[map]) {
+          try {
+            const response = await fetch(source, { mode: 'cors', cache: 'force-cache' });
+            if (!response.ok) throw new Error(`Map data returned ${response.status}`);
+            const data = await response.json();
+            drawGrid(map, svg);
+            drawFeatures(map, svg, data);
+            return;
+          } catch (error) {
+            lastError = error;
+          }
+        }
+        const frame = svg.closest('.map-frame');
+        frame.insertAdjacentHTML('beforeend', `<p class="map-load-error">Map data could not be loaded. Check your internet connection.</p>`);
+        console.warn(`Unable to load ${map} travel map`, lastError);
+      }
+
+      tabs.forEach((tab) => tab.addEventListener('click', () => showMap(tab.id.replace('-tab', ''))));
+      loadMap('world');
+      loadMap('china');
+      loadVisitedPlaces().catch((error) => {
+        const status = document.querySelector('#travel-map-status');
+        if (status) status.textContent = 'Could not read visited-places.txt. Open the page through a local web server.';
+        console.warn('Unable to load visited places', error);
+      });
+    })();
+  </script>
 </body>
 </html>
